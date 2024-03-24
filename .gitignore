@@ -1,2 +1,3 @@
-venv_vericuete
-__pycache__
+venv_vericuete/
+__pycache__/
+logs/
