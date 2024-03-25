@@ -1,0 +1,8 @@
+
+venv*/
+venv_vericuete/
+__pycache__/
+logs/
+.logs
+*.log
+__pycache__/
