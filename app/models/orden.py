@@ -1,23 +1,17 @@
-from pydantic import BaseModel
-from datetime import datetime
+from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.orm import declarative_base
 
-# Modelo para leer datos del cliente
-class OrdenRead(BaseModel):
-    ordenid: int
-    clienteid: int
-    fechaorden: datetime
-    totalprendas: int
-    estado: str
-    pago: bool
+Base = declarative_base()
+
+class Orden(Base):
+    __tablename__ = 'orden'  # Nombre de la tabla en tu base de datos
     
+    ordenid = Column(Integer, primary_key=True, index=True)
+    clienteid = Column(Integer, index=True)
+    fechaorden = Column(DateTime, index=True)
+    totalprendas = Column(Integer, index=True)
+    estado = Column(String, index=True)
+    pago = Column(Integer, index=True)
 
-    class Config:
-        orm_mode = True
-
-# Modelo para crear un nuevo cliente
-class OrdenCreate(BaseModel):
-    clienteid: int
-    fechaorden: datetime
-    totalprendas: int
-    estado: str
-    pago: bool
+    def __repr__(self):
+        return f"<Orden(ordenid={self.ordenid}, clienteid={self.clienteid}, fechaorden={self.fechaorden}, totalprendas={self.totalprendas}, estado={self.estado}, pago={self.pago})>"

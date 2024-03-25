@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sastrería App</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <a href="../index.html" class="boton-regresar">Regresar</a>
+
+
+    <h1>Consultar Cliente</h1>
+
+
+    <!-- Lista de clientes -->
+    <section id="clients-list">
+        <h2>Clientes</h2>
+        <ul id="clients">
+            <!-- Los clientes se cargarán aquí -->
+        </ul>
+    </section>
+
+    
+    <script>
+    async function loadClients() {
+        const response = await fetch('http://127.0.0.1:8000/clientes/', {
+            method: 'GET'
+        });
+        const clients = await response.json();
+    
+        const clientsList = document.getElementById('clients');
+        clientsList.innerHTML = ''; // Limpiar la lista actual
+    
+        for (const client of clients) {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${client.clienteid} ${client.nombre} ${client.apellido} ${client.telefono}`;
+            // Aquí puedes añadir más datos o incluso botones para editar/borrar
+    
+            clientsList.appendChild(listItem);
+        }
+    }
+    loadClients()
+    </script>
+
+
+</body>
+</html>

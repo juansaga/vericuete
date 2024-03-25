@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sastrería App</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <a href="../index.html" class="boton-regresar">Regresar</a>
+
+    <h1>Crear Orden</h1>
+    
+
+    <section id="order-section">
+    
+        <!-- Formulario para crear una nueva orden -->
+        <form id="add-order-form">
+            <input type="text" id="clienteId" placeholder="ID del Cliente" required>
+            <input type="number" id="totalprendas" placeholder="Total de Prendas" required>
+            <p> </p>
+            Estado <select id="estado">
+                <option value=Recibido>Recibido</option>
+                <option value=Realizado>Realizado</option>
+                <option value=Entregado>Entregado</option>
+            </select>
+            <p> </p>
+            Pagado <select id="pago">
+                <option value=0>No</option>
+                <option value=1>Sí</option>
+            </select>
+
+            <!-- Agrega más campos según sea necesario -->
+            <p> </p>
+            <button type="submit">Crear Orden</button>
+        </form>
+    
+    </section>
+    
+    <script src="../js/crear_orden.js"></script>
+
+
+</body>
+</html>
