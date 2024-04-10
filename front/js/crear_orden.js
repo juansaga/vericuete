@@ -38,4 +38,5 @@ document.getElementById('add-order-form').addEventListener('submit', async (e) =
     } catch (error) {
         console.error('Error:', error);
     }
+    location.reload()
 });

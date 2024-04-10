@@ -24,4 +24,5 @@ document.getElementById('add-client-form').addEventListener('submit', async (e) 
     } catch (error) {
         console.error('Error:', error);
     }
+    location.reload()
 });
