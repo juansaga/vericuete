@@ -1,10 +1,15 @@
 from fastapi import FastAPI
 from .routers import cliente_router, orden_router
-from fastapi.middleware.cors import CORSMiddleware  # Importa el middleware CORS
-
+from fastapi.middleware.cors import CORSMiddleware 
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
+app.mount("/home", StaticFiles(directory="front", html=True), name="static")
+
+# @app.get("/")
+# async def main():
+#     return {"message": "Go to /home to see the site"}
 
 app.add_middleware(
     CORSMiddleware,
