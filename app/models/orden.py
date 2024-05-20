@@ -4,7 +4,7 @@ from sqlalchemy.orm import declarative_base
 Base = declarative_base()
 
 class Orden(Base):
-    __tablename__ = 'orden'  # Nombre de la tabla en tu base de datos
+    __tablename__ = 'orden' 
     
     ordenid = Column(Integer, primary_key=True, index=True)
     clienteid = Column(Integer, index=True)
