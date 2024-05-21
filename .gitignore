@@ -6,3 +6,6 @@ logs/
 .logs
 *.log
 __pycache__/
+proyectosastreria/
+*.sqlite
+*.db

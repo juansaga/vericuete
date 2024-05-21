@@ -4,7 +4,7 @@ class ClienteRead(BaseModel):
     clienteid: int
     nombre: str
     apellido: str
-    telefono: str
+    telefono: int
 
     class Config:
         orm_mode = True
@@ -12,4 +12,4 @@ class ClienteRead(BaseModel):
 class ClienteCreate(BaseModel):
     nombre: str
     apellido: str
-    telefono: str
+    telefono: int
