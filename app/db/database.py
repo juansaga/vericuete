@@ -3,11 +3,11 @@ from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 import os
 
-# URL de conexión a la base de datos, idealmente obtenida de variables de entorno
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:juanma123@localhost/postgres")
+# URL de conexión a la base de datos SQLite
+DATABASE_URL = "sqlite:///./sastreria.db"
 
 # Crear el motor de la base de datos utilizando SQLAlchemy
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 
 # Metadatos de SQLAlchemy para la recopilación de modelos
 metadata = MetaData()
