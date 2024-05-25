@@ -22,7 +22,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #0f1e3c;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -45,3 +45,13 @@ li {
     margin-bottom: 10px;
     border-radius: 4px;
 }
+
+#clients li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
