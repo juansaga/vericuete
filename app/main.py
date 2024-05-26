@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from .db.database import engine
 from .models import cliente, orden  # Importamos los modelos para que se registren
+from fastapi.responses import RedirectResponse
 
 app = FastAPI()
 
@@ -23,3 +24,6 @@ app.add_middleware(
 
 app.include_router(cliente_router.router)
 app.include_router(orden_router.router)
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/home/index.html")

@@ -5,5 +5,6 @@ __pycache__/
 logs/
 .logs
 *.log
-__pycache__/
+*pycache*
 .env/
+.pyc

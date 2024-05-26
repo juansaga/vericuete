@@ -11,7 +11,7 @@ class OrdenRead(BaseModel):
     
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class OrdenCreate(BaseModel):
     clienteid: int

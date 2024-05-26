@@ -10,7 +10,7 @@ class ClienteRead(BaseModel):
     telefono: int
     ordenes: List[OrdenRead] = []
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class ClienteCreate(BaseModel):
     nombre: str
