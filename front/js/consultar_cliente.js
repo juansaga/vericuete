@@ -1,13 +1,18 @@
-async function loadClients(nombre, estado) {
+document.getElementById('client_search_form').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
     // aqui se debería estraer los parametros d la función
+
+    const nombre = document.getElementById('client_search_input').value;
+
+    const estado = 'Recibido'
 
     const response = await fetch(`http://127.0.0.1:8000/clientes/?cliente_nombre=${nombre}&estado=${estado}`, {
         method: 'GET'
     });
     const clients = await response.json();
 
-    const info_cliente = [clients.clienteid, clients.nombre, clients.telefono]
+    const info_cliente = [clients.clienteid, clients.nombre, clients.apellido, clients.telefono]
 
     const ordenes = clients.ordenes
 
@@ -25,5 +30,4 @@ async function loadClients(nombre, estado) {
 
         clientsList.appendChild(listItem);
     }
-}
-loadClients('Juan Manuel', 'Recibido')
+})
