@@ -6,3 +6,5 @@ logs/
 .logs
 *.log
 __pycache__/
+*.db
+.env
