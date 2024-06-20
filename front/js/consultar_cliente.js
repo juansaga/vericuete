@@ -5,7 +5,7 @@ document.getElementById('client_search_form').addEventListener('submit', async (
 
     const nombre = document.getElementById('client_search_input').value;
 
-    const estado = 'Recibido'
+    const estado = document.getElementById('client_search_state').value;
 
     const response = await fetch(`http://127.0.0.1:8000/clientes/?cliente_nombre=${nombre}&estado=${estado}`, {
         method: 'GET'
