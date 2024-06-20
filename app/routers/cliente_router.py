@@ -30,3 +30,21 @@ async def read_clientes(cliente_nombre: str, estado = 'Recibido', db: Session = 
         return cliente
     except SQLAlchemyError as e:
         raise HTTPException(status_code=500, detail="Error reading clients") from e
+
+@router.delete("/cliente/{clienteid}", response_model=ClienteRead)
+async def delete_orden(clienteid: int, db: Session = Depends(get_db)):
+    try:
+        db_cliente = db.query(Cliente).filter(Cliente.clienteid == clienteid).first()
+        if db_cliente is None:
+            raise HTTPException(status_code=404, detail="Cliente no encontrado")
+        
+        db.delete(db_cliente)
+        db.commit()
+        return db_cliente
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(status_code=400, detail=f"Error al eliminar el cliente: {str(e)}")
+    
+
+
+    
