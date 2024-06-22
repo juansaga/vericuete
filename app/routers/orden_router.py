@@ -20,7 +20,7 @@ async def create_orden(orden: OrdenCreate, db: Session = Depends(get_db)):
     return db_orden
 
 @router.get("/orden/", response_model=List[OrdenRead])
-async def read_orden(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+async def read_orden(estado, db: Session = Depends(get_db)):
     # Realizar una consulta para obtener clientes, con soporte para paginación usando 'skip' y 'limit'
-    ordenes = db.query(Orden).offset(skip).limit(limit).all()
+    ordenes = db.query(Orden).filter(Orden.estado == estado).all()
     return ordenes
