@@ -24,17 +24,18 @@
         <h3>Buscar cliente</h3>
         <form id="client_search_form">
             <input type="text" id="client_search_input" name="client" placeholder="Buscar cliente">
+            <!-- Dropdown para seleccionar el estado -->
+            <select id="client_search_state" name="estado">
+                <option value="Recibido">Recibido</option>
+                <option value="Realizado">Realizado</option>
+                <option value="Entregado">Entregado</option>
+            </select>
             <button type="submit">Buscar</button>
         </form>
     </section>
     
     
-    <!-- Filtros de las ordenes -->
-    <section id ="order-filters">
-        <button type="filter-btn">Ordenes Pendientes</button> 
-        <button type="filter-btn">Ordenes por Entregar </button> 
-        <button type="filter-btn">Ordenes Finalizadas </button>
-    </section>
+   
 
     
     <!-- Lista de clientes -->
