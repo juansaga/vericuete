@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
+from typing import Optional
 
 class OrdenRead(BaseModel):
     ordenid: int
@@ -19,3 +20,11 @@ class OrdenCreate(BaseModel):
     totalprendas: int
     estado: str
     pago: int
+
+
+class OrdenUpdate(BaseModel):
+    clienteid: Optional[int] = None
+    fechaorden: Optional[datetime] = None
+    totalprendas: Optional[int] = None
+    estado: Optional[str] = None
+    pago: Optional[int] = None
