@@ -11,6 +11,8 @@ document.getElementById('order_search_form').addEventListener('submit', async (e
 
     // const detalle_ordenes = [ordenes.ordenid, ordenes.clienteid, ordenes.fechaorden, ordenes.totalprendas,ordenes.estado, ordenes.pago]
     let ordenList = document.getElementById('ordenes')
+    // Vacea la lista
+    ordenList.innerHTML = ''
 
     for (const orden of ordenes) {
         const listItem = document.createElement('li');
