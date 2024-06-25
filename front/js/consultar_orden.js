@@ -3,7 +3,7 @@ document.getElementById('order_search_form').addEventListener('submit', async (e
 
     // Extracción de parámetros
     const orden = document.getElementById('order_search_input').value;
-    const response = await fetch(`http://127.0.0.1:8000/ordenes/?orden_id=${orden}`, {
+    const response = await fetch(`http://127.0.0.1:8000/orden/?orden_id=${orden}`, {
         method: 'GET'
     });
 
